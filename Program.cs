@@ -39,7 +39,7 @@ namespace Ex_4._2_Coins
 
                     Console.WriteLine("Please insert more money: ");
 
-                    string moreValue = Console.ReadLine().ToUpper;
+                    string moreValue = Console.ReadLine().ToUpper();
 
                     Coin moreMoney = new Coin(moreValue);
                     //decimal theMoney = Convert.ToDecimal(moreValue);
