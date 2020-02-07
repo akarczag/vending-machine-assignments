@@ -25,8 +25,9 @@ namespace Ex_4._2_Coins
                 decimal totalValueInserted = 0M;
                 while (totalValueInserted < sodaPrice.PriceDecimal)
                 {
-                    string coinNameInserted = Console.ReadLine().ToUpper();
+                    string coinNameInserted = Console.ReadLine();
                     Coin coinInserted = new Coin(coinNameInserted);
+
                     Console.WriteLine("You have inserted a {0} worth {1:c}", coinInserted, coinInserted.ValueOf);
 
                     totalValueInserted += coinInserted.ValueOf;
@@ -36,14 +37,14 @@ namespace Ex_4._2_Coins
                     //it's not currently working, and it prevents the correct amount from working
                     //so it's commented out for now 
 
-                    //Console.WriteLine("Please insert more money: ");
+                    Console.WriteLine("Please insert more money: ");
 
-                    //string moreValue = Console.ReadLine();
+                    string moreValue = Console.ReadLine().ToUpper;
 
-                    //Coin moreMoney = new Coin(moreValue);
+                    Coin moreMoney = new Coin(moreValue);
                     //decimal theMoney = Convert.ToDecimal(moreValue);
 
-                    //totalValueInserted += theMoney;
+                    totalValueInserted += moreMoney.ValueOf;
                 }
 
                 Console.WriteLine("You have inserted {0:c}", totalValueInserted);
