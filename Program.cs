@@ -20,33 +20,29 @@ namespace Ex_4._2_Coins
             bool exitVend = false;
             do
             {
-                Console.Write("Please insert {0:c} worth of coins: ", sodaPrice.PriceDecimal);
-
                 decimal totalValueInserted = 0M;
                 while (totalValueInserted < sodaPrice.PriceDecimal)
                 {
-                    string coinNameInserted = Console.ReadLine();
-                    Coin coinInserted = new Coin(coinNameInserted);
+                    bool checkValue = false;
+                    if(totalValueInserted == sodaPrice.PriceDecimal)
+                    {
+                        checkValue = true;
+                    }
 
-                    Console.WriteLine("You have inserted a {0} worth {1:c}", coinInserted, coinInserted.ValueOf);
+                    if (checkValue == false)
+                    {
+                        Console.Write("Please insert a coin: ");
 
-                    totalValueInserted += coinInserted.ValueOf;
-                    Console.WriteLine("Total value inserted is {0:c}", totalValueInserted);
+                        string coinNameInserted = Console.ReadLine().ToUpper();
+                        Coin coinInserted = new Coin(coinNameInserted);
 
-                    //the steps below are intended to allow the user to insert more money
-                    //it's not currently working, and it prevents the correct amount from working
-                    //so it's commented out for now 
+                        Console.WriteLine("You have inserted a {0} worth {1:c}", coinInserted, coinInserted.ValueOf);
 
-                    Console.WriteLine("Please insert more money: ");
-
-                    string moreValue = Console.ReadLine().ToUpper();
-
-                    Coin moreMoney = new Coin(moreValue);
-                    //decimal theMoney = Convert.ToDecimal(moreValue);
-
-                    totalValueInserted += moreMoney.ValueOf;
+                        totalValueInserted += coinInserted.ValueOf;
+                        Console.WriteLine("Total value inserted is {0:c}", totalValueInserted);
+                    }
                 }
-
+                
                 Console.WriteLine("You have inserted {0:c}", totalValueInserted);
                 Console.WriteLine($"Please choose your flavor: {showFlavors.DisplayCanRackString()}");
 
