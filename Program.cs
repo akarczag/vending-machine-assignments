@@ -43,7 +43,7 @@ namespace Ex_4._2_Coins
                     }
                 }
                 
-                Console.WriteLine("You have inserted {0:c}", totalValueInserted);
+                Console.WriteLine("Thanks, you have now inserted {0:c}", totalValueInserted);
                 Console.WriteLine($"Please choose your flavor: {showFlavors.DisplayCanRackString()}");
 
                 string choseFlavor = Console.ReadLine();
